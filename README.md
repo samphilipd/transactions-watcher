@@ -9,7 +9,7 @@ Watches a specified directory and uploads any CSV files to the fosubo endpoint.
 then:
 
 $ lein uberjar
-$ java -jar target/transactions-watcher.jar [args]
+$ java -jar target/uberjar/transactions-watcher.jar [args]
 
 OR:
 
