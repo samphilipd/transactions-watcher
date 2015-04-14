@@ -1,36 +1,38 @@
 # transactions-watcher
 
-FIXME: description
+Watches a specified directory and uploads any CSV files to the fosubo endpoint.
 
 ## Installation
 
-Download from http://example.com/FIXME.
+1. Clone the repo
+
+then:
+
+$ lein uberjar
+$ java -jar target/transactions-watcher.jar [args]
+
+OR:
+
+$ lein run -- [args]
 
 ## Usage
 
-FIXME: explanation
+Usage: transactions-watcher [options]
 
-    $ java -jar transactions-watcher-0.1.0-standalone.jar [args]
+Options:
+  -d, --watch-directory DIRECTORY  .                                                 Directory to watch for uploaded files
+  -u, --upload-url URL             http://localhost:3000/api/v1/upload_transactions  Endpoint URL to POST to
+  -t, --token TOKEN                                                                  Auth token for the fosubo API (required)
+  -c, --company-id COMPANY_ID                                                        The id of the company in the fosubo database (required)
+  -h, --help
 
-## Options
-
-FIXME: listing of options this app accepts.
 
 ## Examples
 
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+java -jar transactions-watcher.jar -c 100 -t 'foobarbazt0k$n' -d '/Users/foo/Desktop' -u 'http://localhost:3000/api/v1/upload_transactions'
 
 ## License
 
-Copyright © 2015 FIXME
+Copyright © 2015 Sam Davies
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the MIT license.

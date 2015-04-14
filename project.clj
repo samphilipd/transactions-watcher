@@ -1,4 +1,4 @@
-(defproject transactions-watcher "0.1.0-SNAPSHOT"
+(defproject transactions-watcher "0.1.0"
   :description "Watches a directory and uploads any CSV files that appear"
   :license {:name "MIT"
             :url "http://opensource.org/licenses/MIT"}
@@ -8,4 +8,5 @@
                  [org.clojure/tools.cli "0.3.1"]]
   :main ^:skip-aot transactions-watcher.core
   :target-path "target/%s"
+  :uberjar-name "transactions-watcher.jar"
   :profiles {:uberjar {:aot :all}})

@@ -30,7 +30,7 @@
          transaction files to the specified directory and POSTs them to the
          Fosubo API."
         ""
-        "Usage: transactions-watcher [options]"
+        "Usage: java -jar transactions-watcher.jar [options]"
         ""
         "Options:"
         options-summary]
