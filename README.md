@@ -4,18 +4,24 @@ Watches a specified directory and uploads any CSV files to the fosubo endpoint.
 
 ## Installation
 
+0. Install [leiningen](http://leiningen.org) if you don't have it already
 1. Clone the repo
 
 then:
+
 ```
 $ lein uberjar
 $ java -jar target/uberjar/transactions-watcher.jar [args]
 ```
+
 OR:
+
 ```
 $ lein run -- [args]
 ```
+
 ## Usage
+
 ```
 Usage: transactions-watcher [options]
 
@@ -28,6 +34,7 @@ Options:
 ```
 
 ## Examples
+
 ```
 java -jar transactions-watcher.jar -c 100 -t 'foobarbazt0k$n' -d '/Users/foo/Desktop' -u 'http://localhost:3000/api/v1/upload_transactions'
 ```
