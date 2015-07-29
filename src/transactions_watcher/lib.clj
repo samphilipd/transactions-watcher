@@ -1,6 +1,14 @@
 (ns transactions-watcher.lib
   (:require [clojure.string :as string :refer [blank?]]))
 
+(defn wait-until-completed
+  "To avoid uploading partially completed files (e.g. from SCP copy) we should wait
+  some period after the create event occurs before triggering the upload.
+  Ideally we would wait until we can get an exclusive lock on the file, for now
+  30 seconds should be easily enough time."
+  [filename]
+  (Thread/sleep 30000))
+
 (defn csv?
   "Returns true if the string filename ends in .csv"
   [filename]

@@ -4,6 +4,7 @@
             [transactions-watcher.lib :refer :all]
             [clojure.tools.cli :refer [parse-opts]]
             [clojure.string :as string :refer [blank?]])
+  (:import [java.io File RandomAccessFile])
   (:gen-class))
 
 (def config (atom {}))
@@ -25,7 +26,8 @@
   "Is called every time a file is created in the watch directory"
   [event filename]
   (println event filename)
-  (if (and (= event :create) (csv? filename))
+  (when (and (= event :create) (csv? filename))
+    (wait-until-completed filename)
     (upload-for-processing filename)))
 
 (defn options-from-args [args]
